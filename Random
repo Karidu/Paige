@@ -1,0 +1,130 @@
+# Random response engine
+
+@client.command()
+async def what_are_you_doing(ctx):
+    WORDS = ("Checking my pineapple slices to make sure they haven't gone bad", "Baking a cake", "Making a game in python", "Staying hydrated :D", "Idk", "Looking at the sky from my roof", "Getting ready for hockey practice", "Watching cat videos", "Trying to sleep lol", "Reading a book", "None of your business >:U", "Hanging out with <@!777584460882771978> :3")
+    random.seed(a=None)
+    word = random.choice(WORDS)
+    correct = word
+    await ctx.send(word)
+
+@client.command()
+async def treat(ctx):
+    WORDS = ("*Gives you a chocolate* - Here :P", "*Gives you hot choccy* - Enjoy :D", "*Gives you a cookie* - Made this myself :3", "*Gives you a spoonful of ice cream* - Only a spoonful- unless you ask me over and over XD", "*Gives you a cupcake* - Made this myself :D", "*Gives you choccy milk* - Here :3")
+    random.seed(a=None)
+    word = random.choice(WORDS)
+    correct = word
+    await ctx.send(word)
+
+@client.command()
+async def fact(ctx):
+    WORDS = ("Choccy milk comes from choccy cows. Deal with it <:ZERblep:721864792423399488>", "You're insane! :D", "'Healthy Burgers' is a typo anywhere you see it. It *should* say 'Heal Thy Burgers'.", "Ben Franklin invented Snapchat :D", "Gold nuggies were named after chicken nuggies", "No, no fact for you right now. I'm busy af", "You're a cutie uwu")
+    random.seed(a=None)
+    word = random.choice(WORDS)
+    correct = word
+    await ctx.send(word)
+    
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def birb(ctx):
+    items = ["https://i.pinimg.com/564x/02/ce/d0/02ced0a1d9eefae34b8622fff1507e29.jpg",
+             "https://images.unsplash.com/photo-1582414123933-271e087538b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+             "https://images.unsplash.com/photo-1457014749444-4dfbbd2426d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+             "https://images.unsplash.com/photo-1604690712020-dcada3a21b38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+             "https://i.pinimg.com/originals/9a/fb/df/9afbdf41f27151e422827ce910a5edbd.jpg",
+             "https://www.sdjgjx.com/up/pc/Cute%20Birds%2021813.jpg",
+             "https://i.imgur.com/RQ93sL1.jpg",
+             "https://pm1.narvii.com/6716/0c1984045c168997f8fc2ec9f38f02d85b8ff978_hq.jpg",
+             "https://media1.tenor.com/images/7e0202a1dd4bcd47961b8e7d577d9ffd/tenor.gif?itemid=13534334",
+             "https://i.pinimg.com/originals/7a/e6/47/7ae647871d44b160e1d0c7e156c2d2f9.gif",
+             "https://s-media-cache-ak0.pinimg.com/736x/c9/92/fa/c992fa0e443171ed68db007458d28903.jpg",
+             "https://media4.giphy.com/media/IKAwlAggc0hJm/source.gif",
+             "http://earthporm.com/wp-content/uploads/2015/04/Sun-Parakeets-Photo-By-Tim-Laman.jpeg",
+             "http://earthporm.com/wp-content/uploads/2015/04/Two-Peace-faced-Lovebirds-Photo-By-Feng-Wei-.jpeg",
+             "http://earthporm.com/wp-content/uploads/2015/04/Cute-Small-Birds-Photo-By-Sijanto.jpeg"]
+    embed = discord.Embed(title="Birb Borb", description="Paige.py Cute Engine", colour=discord.Color.gold())
+    embed.set_image(url=random.choice(items))
+    await ctx.send(embed=embed)
+
+@client.command()
+async def art(ctx):
+    items = [
+        ["https://cdn.discordapp.com/attachments/812799290765475921/815619243893719080/image0.jpg", "Composition with Hat and Hands (1927) | Fernand Léger"],
+        ["https://blog.artsper.com/wp-content/uploads/2019/06/Banksy.jpg", "Girl with Balloon (2002) | Banksy"],
+        ["https://blog.artsper.com/wp-content/uploads/2019/07/koons.jpg", "Balloon Dogs (1994) | Jeff Koons"],
+        ["https://blog.artsper.com/wp-content/uploads/2019/07/weiwei.jpg", "Remembering (2009) | Ai Weiwei"],
+        ["https://blog.artsper.com/wp-content/uploads/2019/07/haring.jpg", "Untitled (1982) | Keith Haring"],
+        ["https://blog.artsper.com/wp-content/uploads/2019/07/kusama.jpg", "Infinity Mirror Room (1965) | Yayoi Kusama"],
+        ["https://blog.artsper.com/wp-content/uploads/2019/07/hirst-1.jpg", "The Physical Impossibility of Death in the Mind of Someone Living (1991) | Damien Hirst"],
+        ["https://blog.artsper.com/wp-content/uploads/2019/07/bacon.jpg", "Three Studies of Lucian Freud (1969) | Francis Bacon"],
+        ["https://blog.artsper.com/wp-content/uploads/2019/07/hockney.jpg", "Pool with Two Figures (1972) | David Hockney"],
+        ["https://uploads4.wikiart.org/images/georges-seurat/sunday-afternoon-on-the-island-of-la-grande-jatte-1886.jpg!Large.jpg", "Sunday Afternoon on the Island of La Grande Jatte (1884) | Georges Seurat"],
+        ["https://www.dalipaintings.com/images/paintings/atavistic-ruins-after-the-rain.jpg", "Atavistic Ruins after the Rain (1934) | Salvador Dali"],
+        ["https://www.aasd.com.au/i/news/776.jpg", "Untitled (1941) | Ralph Balson"],
+        ["https://upload.wikimedia.org/wikipedia/en/6/66/Hand_with_Reflecting_Sphere.jpg", "Hand with Reflecting Sphere (1935) | M. C. Escher"],
+        ["https://www.moma.org/media/W1siZiIsIjE1MTE4MSJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MTQ0MFx1MDAzZSJdXQ.jpg?sha=da2b936692df1548", "Around the Fish (1926) | Paul Klee"],
+        ["https://www.gustav-klimt.com/images/paintings/The-Kiss.jpg", "The Kiss (1907) | Gustav Klimt"],
+        ["https://www.georgiaokeeffe.net/images/paintings/ladder-to-the-moon.jpg", "Ladder to the Moon (1958) | Georgia O'Keeffe"],
+        ["https://uploads4.wikiart.org/images/pablo-picasso/table-in-a-cafe-bottle-of-pernod-1912.jpg!Large.jpg", "Bottle of Pernod (1912) | Pablo Picasso"],
+        ["https://elephant.art/wp-content/uploads/2018/08/PIC.0087-600x906.jpg", "Large Still Life with Pedestal Table (1931) | Pablo Picasso"],
+        ["https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/5-fish-magic-paul-klee.jpg", "Fish Magic (1925) | Paul Klee"],
+        ["https://images-na.ssl-images-amazon.com/images/I/71jq6LSBG9L._AC_SL1024_.jpg", "The Goldfish (1912) | Henri Matisse"],
+             ["https://fr.muzeo.com/sites/default/files/styles/image_basse_def/public/oeuvres/peinture/moderne/lune_brillante_1919138046.jpg?itok=PtavWTCp", "Lune Brilliante (1919) | Paul Klee"],
+             ["https://www.wassilykandinsky.net/images/works/50.jpg", "Composition VIII (1923) | Wassily Kandinsky"],
+             ["http://schirn.de/miro/digitorial/en/images/modules/textimage/b30aa062.bt_konstellationen.jpg", "Cyphers and Constellations in Love with a Woman (1943) | Joan Miro"]
+    ]
+
+    url, name = random.choice(items)
+    embed = discord.Embed(title=name, description="Paige.py Art Engine", colour=discord.Color.dark_red())
+    embed.set_image(url=url)
+    await ctx.send(embed=embed)
+
+# Meme engine
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def meme(ctx):
+    items = ["https://i.ytimg.com/vi/oeqE8dW2RNY/maxresdefault.jpg",
+             "https://img.ifunny.co/images/6e210510379d505e724f50ad3032f5bb2846f6b67ae1eef4e69ca678668538ea_1.jpg",
+             "https://img.ifunny.co/images/2ca79aefefcfa9c4936c1a96c8975f7b5ef02c42fa6fa7af28c0a20ef5031e32_1.jpg",
+             "https://pbs.twimg.com/media/DupWoHCWsAA-Pii.jpg",
+             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf7YHuHFnx6lm87Pcnmx9jUCIX_0Xy6dvQrQ&usqp=CAU",
+             "https://i.pinimg.com/736x/0b/03/ee/0b03ee5c5ea402c065b7d137fc59e640.jpg",
+             "https://i.pinimg.com/736x/29/67/71/29677123963db5b14eb40ac831850a82.jpg",
+             "https://i.pinimg.com/736x/cc/7d/e6/cc7de6168136b2e1bb979ec7134ca4ff.jpg",
+             "https://i.redd.it/w5t036ac3jc11.jpg",
+             "https://pbs.twimg.com/media/Dtlw7h4W4AAosKz?format=jpg&name=large", # small
+             "https://pbs.twimg.com/media/DtlIGl0XQAArWsi?format=jpg&name=large", # small
+             "https://pbs.twimg.com/media/DtlIGRwWkAEmIVN?format=jpg&name=large", # large
+             "https://pbs.twimg.com/media/DtkZpMaVAAA2p_X?format=jpg&name=large", # medium
+             "https://pbs.twimg.com/media/DtkZUaqUUAE8NFb?format=jpg&name=4096x4096", # 4096x4096
+             "https://pbs.twimg.com/media/DtkY_xCXgAAKols?format=jpg&name=large", # medium
+             "https://pbs.twimg.com/media/DtkY-sjW0AEUQMt?format=jpg&name=large", # large
+             "https://pbs.twimg.com/media/DtkYstNWwAAbjaa?format=jpg&name=4096x4096" # 4096x4096
+             "https://external-preview.redd.it/GaMg60v6OH2VHyJD5AKUE5FJ9Ez9vBfukusPe1M0_8Q.jpg?auto=webp&s=57ac0ebacdd4a2a0cd3e25a7da6d134ff5e735e6",
+             "https://pbs.twimg.com/media/DtV60EuXoAoCgvy.jpg",
+             "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/78bc17f6-926f-40c3-8432-3b90e8737f48/d3mbrx-91115dbb-eff3-4d86-b28d-cbca4dd22b18.jpg/v1/fill/w_606,h_626,q_75,strp/life_in_furry_hell_by_nauv_d3mbrx-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD02MjYiLCJwYXRoIjoiXC9mXC83OGJjMTdmNi05MjZmLTQwYzMtODQzMi0zYjkwZTg3MzdmNDhcL2QzbWJyeC05MTExNWRiYi1lZmYzLTRkODYtYjI4ZC1jYmNhNGRkMjJiMTguanBnIiwid2lkdGgiOiI8PTYwNiJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.kckPmBj04qXYmO__JuhZB5m2sQLbxIzktLF96JXnhik",
+             "https://yiffytimes.files.wordpress.com/2017/08/1223361735-nauv_lifh_simple-pleasures.gif",
+             "https://pbs.twimg.com/media/EXZEIZiUwAEQjZd.jpg",
+             "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab1e1c29-b90a-4574-a2cb-7c95ad4e0ba8/ddf0t0l-bc540162-a0fb-49ba-9b96-9afd109cca03.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYWIxZTFjMjktYjkwYS00NTc0LWEyY2ItN2M5NWFkNGUwYmE4XC9kZGYwdDBsLWJjNTQwMTYyLWEwZmItNDliYS05Yjk2LTlhZmQxMDljY2EwMy5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.imrc9mqCC5EgrnOedlehblShMQGF8HxNlkM0NelnFMo",
+             "https://pbs.twimg.com/media/DeuSdg6X4AA1x9v.jpg",
+             "https://pbs.twimg.com/media/Dlh1qKKXcAcEiyF.jpg",
+             "https://i.pinimg.com/originals/6a/7a/64/6a7a6402358a44aec7bdd6295ddbbbb9.jpg",
+             "https://i.pinimg.com/originals/8f/56/c6/8f56c6d9ef5e6e5015940fd068d241cd.jpg",
+             "https://i.imgflip.com/2njjrw.jpg",
+             "https://img.ifunny.co/images/f0a2be38d4740a1d1adb67cc5484b32962f6e9117136eb2c7e1880f046cc6bd4_1.jpg", #amino meme gun whatever
+             "https://i.pinimg.com/originals/bf/5c/d8/bf5cd8df8d3cdfbad280efa2465722f7.jpg",
+             "https://i.chzbgr.com/original/9555973/hD86F856B/funny-and-cute-animal-memes-cat-memes-dog-memes-bird-memes-opossums",
+             "https://pics.me.me/i-hope-were-having-scalloped-potatoes-47742231.png",
+             "https://img-9gag-fun.9cache.com/photo/ax0vMOM_460s.jpg",
+             "https://i.imgflip.com/2ojtpn.jpg",
+             "https://i.redd.it/klqtz8f5oob41.jpg",
+             "https://i.pinimg.com/736x/59/28/a0/5928a0fe8b3b613b100f2734e8304fe9.jpg",
+             "https://i.imgur.com/2YwsLbv.jpg",
+             "https://static10.tgstat.ru/channels/_0/f5/f5e7ed1aac9b9ac890ca308e9cb77bbc.jpg",
+             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75TZPqGaCuqucMFdOA921xmhMgNWe4xlShw&usqp=CAU",
+             "https://ih1.redbubble.net/image.925569627.1811/poster,504x498,f8f8f8-pad,600x600,f8f8f8.jpg"
+             ]
+    embed = discord.Embed(title="Pawggers", description="Paige.py Meme Engine", colour=discord.Color.purple())
+    embed.set_image(url=random.choice(items))
+    await ctx.send(embed=embed)
