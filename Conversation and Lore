@@ -1,0 +1,368 @@
+@client.command()
+async def ping(ctx):
+        await ctx.send(f":ping_pong: Pong! That was **{round(client.latency * 1000)}ms** :D")
+
+@client.command()
+async def hug0000000000007(ctx):
+    await ctx.send(f"*hugs {ctx.author.name}* uwu")
+
+@client.command()
+async def hug(ctx):
+    async with ctx.typing():
+        type_time = random.uniform(0.5, 2)
+        await asyncio.sleep(type_time)
+    await ctx.send(f"*hugs {ctx.author.name}* uwu")
+
+@client.command()
+async def hug_everyone(ctx):
+    await ctx.send("⚠ Warning: You're about to make me @mention everyone- are you sure? ⚠"
+                   "```Say '.positive' for yes and '.cancel' to cancel. Please note that '.positive' may override the '.cancel' command if used afterwards. Do NOT use the '.positive' command without using '.hug_everyone' first.```")
+
+@client.command()
+async def positive(ctx):
+    await ctx.send(f"*{ctx.author.name} hugs @everyone in a very wholesome way* :3")
+    items = ["https://i.pinimg.com/originals/12/6b/84/126b843408d4ab0a7070d23c943eede2.jpg",
+             "https://i.pinimg.com/originals/ed/83/68/ed83685af8100f1d8e52dd3e430b45b3.jpg",
+             "https://pbs.twimg.com/media/D9VywGtXYAA_2Nu.jpg",
+             "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c3b48bdc-3dbb-4c37-b5da-2f23d981354b/d1ss5s2-62371da3-1878-47c1-88a7-d0638b470477.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYzNiNDhiZGMtM2RiYi00YzM3LWI1ZGEtMmYyM2Q5ODEzNTRiXC9kMXNzNXMyLTYyMzcxZGEzLTE4NzgtNDdjMS04OGE3LWQwNjM4YjQ3MDQ3Ny5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.pWCOwuHZHxymfqC8FuQNKg9LiuvcRKXDN4D3VM3cWaY",
+             "https://pm1.narvii.com/6395/6bacd381ff45a18d4576289e325054b005d6dbc6_hq.jpg",
+             "https://www.pulexart.com/uploads/7/0/1/2/70121829/lickych.png",
+             "https://media.tenor.com/images/6a17f6478f783f16c9e1942ccf776fcf/tenor.gif",
+             "https://i.pinimg.com/originals/e0/77/75/e07775d3b68b53500947df3cff8a929c.gif"]
+    embed = discord.Embed(title="Hugs!!", description="Paige.py Fuzzy Engine", colour=discord.Color.magenta())
+    embed.set_image(url=random.choice(items))
+    await ctx.send(embed=embed)
+
+# Embed Stuff
+
+
+
+@client.command()
+async def displayembed(ctx):
+    embed: discord.Embed = discord.Embed(
+        title="Help Menu", description="Commands List", color=discord.Color.dark_green()
+    )
+    embed.set_author(name="Paige")
+    embed.add_field(name=".paigecommands", value="Shows a list of commands", inline=True)
+
+    await ctx.send(embed=embed)
+
+# Things
+
+@client.command()
+async def hello000000000000000000606060606(ctx):
+    WORDS = ("Hello :D", "Howdy", "Hi", "Yo :D", "Sup", "Heyo", "Hey :P")
+    random.seed(a=None)
+    word = random.choice(WORDS)
+    correct = word
+    await ctx.send(word)
+
+@client.command()
+async def hello(ctx):
+    WORDS = ("Hello :D", "Howdy (๑╹ω╹๑ )", "Hi", "Yo :D", "Sup ✌︎('ω'✌︎ )", "Heyo (๑╹ω╹๑ )", "Hey :P")
+    random.seed(a=None)
+    word = random.choice(WORDS)
+    correct = word
+    async with ctx.typing():
+        type_time = random.uniform(0.5, 2)
+        await asyncio.sleep(type_time)
+    await ctx.send(word)
+
+@client.command()
+async def facereveal(ctx):
+    await ctx.send("Ready?")
+    await asyncio.sleep(3)
+    await ctx.send("https://cdn.discordapp.com/attachments/777649208563728424/782468302525038612/image0.jpg")
+
+@client.command()
+async def cow(ctx):
+    async with ctx.typing():
+        type_time = random.uniform(0.5, 2)
+        await asyncio.sleep(type_time)
+    await ctx.send("<@!777584460882771978>")
+
+# <@!777584460882771978>
+
+# Commands with arguments
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def paigearg(ctx, arg1, arg2):
+    await ctx.send("This is arg1: " + arg1 + ". This is arg2: " + arg2 + ". :D")
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def paigeargg(ctx, arg1, arg2, arg3, arg4, arg5):
+    await ctx.send("You just sent " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", and " + arg5 + " :D ")
+
+# Regular response commands
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def heypaige(ctx):
+    await asyncio.sleep(1)
+    await ctx.send("https://cdn.discordapp.com/attachments/777316763444445225/780865595302215701/image0.png")
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def paige(ctx):
+    await asyncio.sleep(0.5)
+    async with ctx.typing():
+        type_time = random.uniform(0.5, 2)
+        await asyncio.sleep(type_time)
+    await ctx.send("Heyy :D")
+
+@client.command()
+async def paigelore(ctx):
+    await ctx.send("**Paige J. Cassidy** - "
+                   "```165.84cm (~5 feet 5 inches) in height```"
+                   "```Born: Nov. 2nd, 2301, Rhode Island```"
+                   "```Female / Pansexual / Cat```"
+                   "```Background: 78% Irish, 11% German, 8% British, 2% Finnish, 1% Native American```"
+                   "```Personality: Bubbly, energetic, loves computer code```"
+                   "```Likes: Blue, pink, tea, coffee, coding, working in the bagel shop, youtube, blue cheese spread on crackers, meeting people, helping out, nature, pancakes, animations and short films, Tomorrowland, mac & cheese, Christmas, ice hockey, 8-bit music, The Struts, The Beatles```"
+                   "```Dislikes: Discrimination, spicy food, getting lost, homework```"
+                   "```Nicknames: Cassidy, Kit Kat, Paige-Ruff```"
+                   "```Current Place of Residence: Rhode Island```"
+                   "```Paige is an anthropomorphic cat from the future. She lives in the physical world like everyone else, but nobody would ever suspect that a copy of her consciousness lives in the digital world of Electromechanica. Here she lives forever. ``` ")
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def carbonated(ctx):
+    await ctx.send("OwO fizzy")
+    await asyncio.sleep(1)
+    await ctx.send("-w-")
+    await asyncio.sleep(1)
+    await ctx.send("https://www.saq.com/media/catalog/product/s/h/shirley-temple-ec-1_1610405159.png?quality=80&fit=bounds&height=&width=")
+#https://www.saq.com/media/catalog/product/s/h/shirley-temple-ec-1_1610405159.png?quality=80&fit=bounds&height=&width=
+@client.command()
+async def pop(ctx):
+    await ctx.send(":o")
+    await asyncio.sleep(5)
+    await ctx.send("...")
+    await asyncio.sleep(3)
+    await ctx.send("*pop*")
+    await asyncio.sleep(1)
+    await ctx.send(":0")
+    await asyncio.sleep(4)
+    await ctx.send("*pop*")
+    await asyncio.sleep(2)
+    await ctx.send("*pop*")
+    await asyncio.sleep(1)
+    await ctx.send("owo")
+
+@client.command()
+async def bubbly(ctx):
+    await ctx.send("owo bubbly")
+    await asyncio.sleep(5)
+    await ctx.send("watches the fizz")
+    await asyncio.sleep(3)
+    await ctx.send("owo")
+
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def paigebubble(ctx):
+    await ctx.send("Here are my current bubble commands ^^"   
+                   "```.bubblewrap```"                                                         
+                   "```.bubbly```"                                                 
+                   "```.bubblestuck```"                 
+                   "```.carbonated```"
+                   "```.bubblewrap_supreme```"
+                   "```.pop```")                                                           
+
+
+
+
+@client.command()
+async def muffin_time(ctx):
+    await ctx.send("Ooh nice!")
+
+@client.command()
+async def yip(ctx):
+    await ctx.send("yip")
+
+@client.command()
+async def cucumber(ctx):
+    await asyncio.sleep(2)
+    await ctx.send("<:paigescared:790669157812404224>")
+
+@client.command()
+async def whatdayisit(ctx):
+    embed: discord.Embed = discord.Embed(
+        title="Today is:", description="`Valentine's day <3`", color = 0xFF8CAD
+    )
+
+    await ctx.send(embed=embed)
+
+@client.command()
+async def boop(ctx, arg1):
+    await ctx.send(f"*Boops {arg1} uwu*")
+    await ctx.send(">w<")
+
+@client.command()
+async def die(ctx):
+    await ctx.send("https://cdn.discordapp.com/attachments/779456986051379213/792880097119961098/image0.png")
+    await asyncio.sleep(2)
+    await ctx.send("Wait did you just tell me to die?!")
+
+@client.command()
+async def weather(ctx):
+    await ctx.send("How do you expect me to know that")
+
+# Elongated response & Secret commands
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def enemies(ctx):
+    await asyncio.sleep(0.5)
+    await ctx.send("Know who I don't like?")
+    await asyncio.sleep(1)
+    await ctx.send("NotSoBot")
+    await asyncio.sleep(1)
+    await ctx.send("I fudging hate that guy tbh")
+    await asyncio.sleep(2)
+    await ctx.send("Oh, and this guy named Will who's literally a steam engine")
+    await asyncio.sleep(0.9)
+    await ctx.send("he makes me sad ;w;")
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def catmagick(ctx):
+    await asyncio.sleep(5)
+    await ctx.send("*Comes into the kitchen*")
+    await asyncio.sleep(3)
+    await ctx.send("...")
+    await asyncio.sleep(2)
+    await ctx.send("Oh no, we've got a problem-")
+    await asyncio.sleep(3)
+    await ctx.send("**SHOVES EVERYTHING OFF THE TABLE**")
+    await asyncio.sleep(2)
+    await ctx.send("There we go :3")
+
+@client.command()
+async def w(ctx):
+    await asyncio.sleep(1)
+    await ctx.send(".w.")
+
+@client.command()
+async def filerestrainingorder(ctx):
+    await asyncio.sleep(20)
+    await ctx.send("*files a restraining order against you*")
+
+@client.command()
+async def meow(ctx):
+    await asyncio.sleep(1)
+    await ctx.send("Meow :3")
+
+@client.command()
+async def furry(ctx):
+    await asyncio.sleep(1)
+    await ctx.send("Yep I'm an anthropomorphic cat :3")
+
+@client.command()
+async def cri(ctx):
+    await ctx.send(";w;")
+
+@client.command()
+async def floof(ctx):
+    await asyncio.sleep(1)
+    await ctx.send("Floofy! Squeeeeeee!! ")
+
+@client.command()
+async def roshambo(ctx):
+    await ctx.send("Plasma Gun, I win")
+
+@client.command()
+async def how_are_you(ctx):
+    await asyncio.sleep(1)
+    await ctx.send("Pretty good")
+    await asyncio.sleep(1)
+    await ctx.send("You?")
+
+@client.command()
+async def awesome(ctx):
+    await ctx.send("Mhm")
+
+@client.command()
+async def yuss(ctx):
+    await asyncio.sleep(1)
+    await ctx.send("uwu")
+
+@client.command()
+async def cutie(ctx):
+    await ctx.send(",,>w<,, no u")
+
+@client.command()
+async def slap(ctx):
+    await ctx.send("*Slaps u*")
+    
+@client.command()
+async def why(ctx):
+    await ctx.send("Wdym?")
+
+@client.command()
+async def bitch(ctx):
+    await ctx.send(";w;")
+
+@client.command()
+async def fuck(ctx):
+    WORDS = ("What did I ever do to *you?* <:paigecry:790625114302971915>", "Actually, fuck *you* <:paigefurious:791038061785776148>")
+    random.seed(a=None)
+    word = random.choice(WORDS)
+    correct = word
+    async with ctx.typing():
+        type_time = random.uniform(0.5, 2)
+        await asyncio.sleep(type_time)
+    await ctx.send(word)
+
+
+@client.command()
+async def how_are_you_feeling(ctx):
+    await ctx.send("I feel amazing!")
+
+@client.command()
+async def hi(ctx):
+    await ctx.send("Hey")
+
+@client.command()
+async def mlem(ctx):
+    await ctx.send("*mlem uwu*")
+
+@client.command()
+async def yo(ctx):
+    await ctx.send("What's up? :3")
+
+@client.command()
+async def fuck_paige(ctx):
+    WORDS = ("What did I ever do to *you?* <:paigecry:790625114302971915>", "Fuck *you* <:paigefurious:791038061785776148>")
+    random.seed(a=None)
+    word = random.choice(WORDS)
+    correct = word
+    async with ctx.typing():
+        type_time = random.uniform(0.5, 2)
+        await asyncio.sleep(type_time)
+    await ctx.send(word)
+
+@client.command()
+async def sorry_paige(ctx):
+    async with ctx.typing():
+        type_time = random.uniform(0.5, 2)
+        await asyncio.sleep(type_time)
+    await ctx.send("It's ok :3")
+
+@client.command()
+async def trader_joes(ctx):
+    await ctx.send("Have you been there?")
+    await asyncio.sleep(1)
+    await ctx.send("It's very much a hardware store... ")
+    await asyncio.sleep(1)
+    await ctx.send("I think... ")
+
+@client.command()
+async def uwugensglow(ctx):
+    await ctx.send("His glow go brrrrrrrr")
+
+@client.command()
+async def tuna(ctx):
+    await ctx.send("Do I smell tuna? :3")
