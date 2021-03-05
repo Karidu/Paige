@@ -1,0 +1,107 @@
+# Commands list, Info & Help
+
+@client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
+async def paigecommands(ctx):
+    embedi = discord.Embed(title="Here are my current main commands... there are a few secret commands too ;3", description=f"`.paigecommands` - what you just did. \n"
+                   "`.paigehelp` - Need help? \n"
+                   "`.onlinesched` - My current schedule. \n"
+                   "`.info` - Copyright / version stuff. \n"
+                   "`.invite` - I'll give you the invite to Paige.py HQ. \n"
+                   "`.servers` - I'll tell you how many servers I'm in :3 \n"                                                                                                         
+                   "`.invites` - I'll tell you how many members you invited to a server. \n"
+                   "`.paige` - I'll say hi. \n"
+                   "`.paigearg` - After this command, you gotta put two words after.  **Ex:** `.paigearg nugget biscuit` \n"
+                   "`.paigeargg` - Same thing as `.paigearg` but with 5 words instead of just two, and the response is better. \n"
+                   "`.paigelore` - I'll give you my bio / backstory. Er, what there is so far. I'm still under development 'n stuff :P \n"
+                   "`.paigefamily` - I'll give you a list of a bunch of my family members. \n"
+                   "`.how_are_you` - Want to know how I'm doing? \n"
+                   "`.ok` - Conversational. \n"
+                   "`.hello` - Conversational. \n"
+                   "`.also_good` - Conversational. \n"
+                   "`.bad` - Conversational. \n"
+                   "`.sad` - Conversational. \n"
+                   "`.member_count` - Counting the server members? \n"
+                   "`.ramen_time` - Yasss!! \n"
+                   "`.muffin_time` - Hype \n"
+                   "`.treat` - I'll give you a treat. \n"
+                   "`.tell_time` - If you want me to tell you the time. \n"
+                   "`.tuna` - Tuna?? Where? \n"
+                   "`.weather` - Weather? \n"
+                   "`.fact` - Want a completely true fact owo? \n"
+                   "`.hows_your_day` - If you want a breif overview of my day so far. \n"
+                   "`.birb` - I'll give you a birb picture :3 \n"
+                   "`.art` - Want some famous artworks? \n"
+                   "`.feeling` - Wanna know how I'm actually feeling inside? \n"                                                                                                         
+                   "`.malta` - Cute shiba inu \n"
+                   "`.insult` - I'll give you a clever insult :3 \n"                                                                                                         
+                   "`.yip` - Yip. \n"
+                   "`.meow` - Meow. ", color = 0xFF8CAD)
+
+    embedii = discord.Embed(title="More of my current main commands... ",
+                           description=f"`.boop` - OnO \n"
+                                       "`.hug` - I'll personally give you a hug. \n"
+                                       "`.hug_everyone` - I'll hug everyone, but this @mentions everyone so be careful... \n"
+                                       "`.DM` - Dm someone a message! **Ex:** `.DM @user Muffin`\n"
+                                       "`.owo` - I'll convert your text into owo language >:3 **Ex:** `.owo Hello`\n"
+                                       "`.flj` - I'll convert your text into Fljorian >:3 **Ex:** `.flj Hello`\n"
+                                       "`.cypher` - I'll code up your text >:3 **Ex:** `.cypher Hello`\n"
+                                       "`.autorule` - I'll write your server rules for you. \n"
+                                       "`.ping` - My latency command. \n"
+                                       "`.echo` - I'll echo what you say! \n"
+                                       "`.meme` - Want some furry memes OwO? \n"
+                                       "`.enemies` - Wanna know who I don't like? \n"
+                                       "`.catmagick` - [insert smug cat face here] \n"
+                                       "`.what_are_you_doing` - If I don't know you and you type in this command... that's kinda creepy ngl \n"
+                                       "`.facereveal` - Wanna see what I look like... as a *hooman?* ",
+                           color = 0xFF8CAD)
+    await ctx.send(embed=embedi)
+    await ctx.send(embed=embedii)
+    await asyncio.sleep(1)
+    await ctx.send("Ok? :P")
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def paigensfwcommands(ctx):
+    await ctx.send("Here are my current *NSFW* commands... there are a few secret commands too OwO "
+                   "```.yiff``` - Yiff yiff? "
+                   "```.gluepaw``` - Very sticky OwO "
+                   "```.gluepaige``` - Want to get my massive paws stuck? (pls don't ;w;)"
+                   "```.paws``` - All kinds of paws and feet... "
+                   "```.fuck_me``` - ,,OwO,, "
+                   "```.bang``` - ,,OwO,, ")
+
+    await asyncio.sleep(1)
+    await ctx.send("Ok? :P")
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def taccommands(ctx):
+    await ctx.send("```.kick``` - My kick command. Here's a command format example: `.kick @user reason` \n"
+                   "--- \n"
+                   "```.add``` - I'll add two numbers. Here's a command format example: `.add 1 2` "
+                   "```.sub``` - I'll subtract two numbers. Here's a command format example: `.sub 2 1` "
+                   "```.mult``` - I'll multiply two numbers. Here's a command format example: `.mult 5 5` "
+                   "```.div``` - I'll divide two numbers. Here's a command format example: `.div 10 5` "
+                   "- Please note that while I can give decimals as an answer, I don't calculate them yet. I also don't yet calculate fractions or percents :T "
+                   "```.utc``` - I'll give you the time un UTC. ")
+    await asyncio.sleep(1)
+    await ctx.send("Ok? :3")
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def paigehelp(ctx):
+    await asyncio.sleep(1)
+    await ctx.send("Kk hold on-")
+    await asyncio.sleep(3)
+    await ctx.send("Let's see here")
+    await asyncio.sleep(5)
+    await ctx.send("Ok. Type `.paigecommands` for my commands list ")
+    await asyncio.sleep(1.5)
+    await ctx.send("Type `.paigensfwcommands` for my NSFW commands list ")
+    await asyncio.sleep(1.5)
+    await ctx.send("Type `.taccommands` for my moderation, time, and calculations commands list ")
+    await asyncio.sleep(1.5)
+    await ctx.send("And if you think there's a problem, just type `.run_diagnostic` and everything should be good ")
+    await asyncio.sleep(2.5)
+    await ctx.send("Ok? :D")
