@@ -1,0 +1,48 @@
+@client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
+async def autorule(ctx):
+    embed = discord.Embed(title=f"Welcome to {ctx.guild.name}! These are the rules. Read them. ", description=f"`1. Be respectful to everyone.`\n"
+                   "`2. Sending/Linking any harmful material such as viruses, IP grabbers or harmware results in an immediate and permanent ban.`\n"
+                   "`3. Don’t spam in channels that aren’t designated for spamming.`\n"
+                   "`4. Usage of excessive extreme innapropriate langauge is largely prohibited.`\n"
+                   "`5. Mentioning @everyone, the Moderators or a specific person without proper reason is prohibited.`\n"
+                   "`6. Please act civil in Voice Chats.`\n"
+                   "`7. Post content in the correct channels! `\n"  
+                   "`8. Don't post someone's personal information without their consent. `\n"
+                   "`9. Always listen to the Moderators, and do not minimod.`\n"
+                   "`10. Do not post graphic pictures of minors (<18yo) unless you’re in a channel where that’s ok. Which there isn’t for reasons that should be obvious.`\n"
+                   "`11. Please don’t advertise here unless you’re sponsored. Or if you have a really amazing server.`\n"    
+                   "`12. No illegal content. This should be obvious.`\n"
+                   "`13. No blatant hate speech. This includes racism, sexism, slurs such as the n-word or j-word, offensive memes, and flat-out hate. Swearing is okay as long as it doesn’t go against any rule listed here.`\n"
+                   "`14. No impersonation, especially of officials. Also, no stalking people!`\n"
+                   "`15. Posting cat memes is a good idea but only in channels that allow that!`", color = 0xFF8CAD)
+    await ctx.send(embed=embed)
+    await asyncio.sleep(1)
+    await ctx.send("Press ✅ to accept and ❌ to decline.")
+    
+@client.command()
+@commands.has_permissions(kick_members=True)
+async def kick(ctx, member: discord.Member, reason):
+    await ctx.send(f"{member.name} has been kicked by {ctx.author.name}!")
+    await member.send(f"You've been kicked by {ctx.author.name} because of this: {reason}")
+    await member.kick()
+
+
+
+@client.command()
+@commands.cooldown(1, 30, commands.BucketType.user)
+async def paigelogin(ctx):
+    await asyncio.sleep(1)
+    await ctx.send("It's good to be alive <:python:790621950895718430>")
+    await asyncio.sleep(1)
+    await ctx.send("Hi :D")
+
+@client.command()
+async def servers(ctx):
+        servers = len(client.guilds)
+        await ctx.send(f"I'm in {servers} servers rn ✌︎('ω'✌︎ )")
+
+
+@client.command()
+async def vote(ctx):    
+    await ctx.send("https://discordbotlist.com/bots/paige")
