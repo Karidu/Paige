@@ -23,5 +23,7 @@ The ultimate goal was to make Paige a friendly, “relatable” bot that anyone 
 
 Paige’s main command prefix is ., but you can also type pge, Hey Paige,, or just Paige,.
 
+Of course, not the entirity of Paige's code will be posted. This code is not free to use without permission. 
+
 Vote at https://discordbotlist.com/bots/paige 
 
