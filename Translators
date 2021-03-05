@@ -1,0 +1,238 @@
+# Complicated letter replacement functions 'n stuff
+
+vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+
+def last_replace(s, old, new):
+    li = s.rsplit(old, 1)
+    return new.join(li)
+
+def text_to_owo(text):
+    """ Converts your text to OwO """
+    smileys = [';;w;;', '^w^', '>w<', 'UwU', '(・`ω\´・)', '(´・ω・\`)']
+
+    text = text.replace('L', 'W').replace('l', 'w')
+    text = text.replace('R', 'W').replace('r', 'w')
+
+    text = last_replace(text, '!', '! {}'.format(random.choice(smileys)))
+    text = last_replace(text, '?', '? owo')
+    text = last_replace(text, '.', '. {}'.format(random.choice(smileys)))
+
+    for v in vowels:
+        if 'n{}'.format(v) in text:
+            text = text.replace('n{}'.format(v), 'ny{}'.format(v))
+        if 'N{}'.format(v) in text:
+            text = text.replace('N{}'.format(v), 'N{}{}'.format('Y' if v.isupper() else 'y', v))
+
+    return text
+
+def last_replace(s, old, new):
+    li = s.rsplit(old, 1)
+    return new.join(li)
+
+def text_to_flj(text):
+    """ Converts your text to Fljorian """
+    endings = ['¨', 'µµ', 'å', '“', 'aa']
+
+    text = text.replace('A', 'X').replace('a', 'x')
+    text = text.replace('B', 'D').replace('b', 'd')
+    text = text.replace('C', 'Åkπ').replace('c', 'k')
+    text = text.replace('D', '∫L').replace('d', 'πo')
+    text = text.replace('E', 'Vµ').replace('e', 'aa')
+    text = text.replace('F', '∏').replace('f', 'π')
+    text = text.replace('G', 'Â').replace('g', 'µ')
+    text = text.replace('H', '∆ı').replace('h', 'µn')
+    text = text.replace('I', '∆ıµ').replace('i', 'ux')
+    text = text.replace('J', 'J').replace('j', 'ba')
+    text = text.replace('K', 'Q').replace('k', 'q')
+    text = text.replace('L', '∆k').replace('l', 'k')
+    text = text.replace('M', 'X').replace('m', 'πuu')
+    text = text.replace('N', 'Vo').replace('n', 'vo')
+    text = text.replace('O', 'Å').replace('o', 'å')
+    text = text.replace('P', 'δpπ').replace('p', 'f')
+    text = text.replace('Q', '∆∂').replace('q', 'ππp')
+    text = text.replace('R', 'ßa').replace('r', 'j')
+    text = text.replace('S', 'Qü').replace('s', 'q')
+    text = text.replace('T', 'Kä').replace('t', 'kä')
+    text = text.replace('U', 'Xa').replace('u', 'uu')
+    text = text.replace('ø', 'Vo').replace('ø', 'vo')
+    text = text.replace('W', 'Å3').replace('w', 'å')
+    text = text.replace('X', 'δpπ').replace('x', 'pµ')
+    text = text.replace('Y', '∂a').replace('y', 'ππ')
+    text = text.replace('Z', 'Ω').replace('z', 'pπx')
+    text = text.replace('1', '.•.').replace('1', '.•.')
+    text = text.replace('2', '.••.').replace('2', '.••.')
+    text = text.replace('3', '.•••.').replace('3', '.•••.')
+    text = text.replace('4', '.••••.').replace('4', '.••••.')
+    text = text.replace('5', '.º.').replace('5', '.º.')
+    text = text.replace('6', '.º•.').replace('6', '.º•.')
+    text = text.replace('7', '.º••.').replace('7', '.º••.')
+    text = text.replace('8', '.º•••.').replace('8', '.º•••.')
+    text = text.replace('9', '.º••••.').replace('9', '.º••••.')
+    text = text.replace('0', '.ª.').replace('0', '.ª.')
+    text = text.replace('10', '.ºº.').replace('10', '.ºº.')
+    text = text.replace('Pl', '∆').replace('pl', 'uux')
+    text = text.replace('Flo', 'Åo').replace('flo', 'j')
+
+    text = last_replace(text, '!', '! {}'.format(random.choice(endings)))
+    text = last_replace(text, '?', '? aa')
+    text = last_replace(text, '.', '. {}'.format(random.choice(endings)))
+
+    for v in vowels:
+        if 'n{}'.format(v) in text:
+            text = text.replace('n{}'.format(v), 'ny{}'.format(v))
+        if 'N{}'.format(v) in text:
+            text = text.replace('N{}'.format(v), 'N{}{}'.format('Y' if v.isupper() else 'y', v))
+
+    return text
+
+def last_replace(s, old, new):
+    li = s.rsplit(old, 1)
+    return new.join(li)
+
+def text_to_cypher(text):
+    """ Converts your text to a cypher code """
+    endings = ['-']
+
+    text = text.replace('A', 'K').replace('a', 'k')
+    text = text.replace('B', 'L').replace('b', 'l')
+    text = text.replace('C', 'M').replace('c', 'm')
+    text = text.replace('D', 'N').replace('d', 'n')
+    text = text.replace('E', 'O').replace('e', 'o')
+    text = text.replace('F', 'P').replace('f', 'p')
+    text = text.replace('G', 'Q').replace('g', 'q')
+    text = text.replace('H', 'R').replace('h', 'r')
+    text = text.replace('I', 'S').replace('i', 's')
+    text = text.replace('J', 'T').replace('j', 't')
+    text = text.replace('K', 'U').replace('k', 'u')
+    text = text.replace('L', 'V').replace('l', 'v')
+    text = text.replace('M', 'W').replace('m', 'w')
+    text = text.replace('N', 'X').replace('n', 'x')
+    text = text.replace('O', 'Y').replace('o', 'y')
+    text = text.replace('P', 'Z').replace('p', 'z')
+    text = text.replace('Q', 'A').replace('q', 'a')
+    text = text.replace('R', 'B').replace('r', 'b')
+    text = text.replace('S', 'C').replace('s', 'c')
+    text = text.replace('T', 'D').replace('t', 'e')
+    text = text.replace('U', 'E').replace('u', 'd')
+    text = text.replace('Y', 'F').replace('v', 'f')
+    text = text.replace('W', 'G').replace('w', 'g')
+    text = text.replace('X', 'H').replace('x', 'h')
+    text = text.replace('Y', 'I').replace('y', 'i')
+    text = text.replace('Z', 'J').replace('z', 'j')
+
+    text = last_replace(text, '!', '! {}'.format(random.choice(endings)))
+    text = last_replace(text, '?', '?')
+    text = last_replace(text, '.', '. {}'.format(random.choice(endings)))
+
+    return text
+
+def text_to_decypher(text):
+    """ Converts your text from a cypher code """
+    endings = ['-']
+
+    text = text.replace('K', 'A').replace('k', 'a')
+    text = text.replace('L', 'B').replace('l', 'b')
+    text = text.replace('M', 'C').replace('m', 'c')
+    text = text.replace('N', 'D').replace('n', 'd')
+    text = text.replace('O', 'E').replace('o', 'e')
+    text = text.replace('P', 'F').replace('p', 'f')
+    text = text.replace('Q', 'G').replace('q', 'g')
+    text = text.replace('R', 'H').replace('r', 'h')
+    text = text.replace('S', 'I').replace('s', 'i')
+    text = text.replace('T', 'J').replace('t', 'j')
+    text = text.replace('U', 'K').replace('u', 'k')
+    text = text.replace('V', 'L').replace('v', 'l')
+    text = text.replace('W', 'M').replace('w', 'm')
+    text = text.replace('X', 'N').replace('x', 'n')
+    text = text.replace('Y', 'O').replace('y', 'o')
+    text = text.replace('Z', 'P').replace('z', 'p')
+    text = text.replace('A', 'Q').replace('a', 'q')
+    text = text.replace('B', 'R').replace('b', 'r')
+    text = text.replace('C', 'S').replace('c', 's')
+    text = text.replace('D', 'T').replace('d', 't')
+    text = text.replace('E', 'U').replace('e', 'u')
+    text = text.replace('F', 'V').replace('f', 'v')
+    text = text.replace('G', 'W').replace('g', 'w')
+    text = text.replace('H', 'X').replace('h', 'x')
+    text = text.replace('I', 'Y').replace('i', 'y')
+    text = text.replace('J', 'Z').replace('j', 'z')
+
+    text = last_replace(text, '!', '! {}'.format(random.choice(endings)))
+    text = last_replace(text, '?', '?')
+    text = last_replace(text, '.', '. {}'.format(random.choice(endings)))
+
+    return text
+
+def text_to_hell(text):
+    """ Converts your text to a cypher code """
+    endings = ['ziph', 'a', 'o', 'eph', 'rafshiphsahinihinib']
+
+    text = text.replace('A', 'Ad').replace('a', 'aub')
+    text = text.replace('B', 'Ba').replace('b', 'leshiib')
+    text = text.replace('C', 'Ca').replace('c', 'caliib')
+    text = text.replace('D', 'Dha').replace('d', 'drahmaa')
+    text = text.replace('E', 'Ee').replace('e', 'eed')
+    text = text.replace('F', 'Fr').replace('f', 'fed')
+    text = text.replace('G', 'Gq').replace('g', 'gred')
+    text = text.replace('H', 'Hi').replace('h', 'hho')
+    text = text.replace('I', 'Ii').replace('i', 'isti')
+    text = text.replace('J', 'Ja').replace('j', 'jkl')
+    text = text.replace('K', 'Uio').replace('k', 'kii')
+    text = text.replace('L', 'Vo').replace('l', 'lenhiid')
+    text = text.replace('M', 'Voo').replace('m', 'meed')
+    text = text.replace('N', 'Xx').replace('n', 'neheeb')
+    text = text.replace('O', 'Ya').replace('o', 'aux')
+    text = text.replace('P', 'Zha').replace('p', 'per')
+    text = text.replace('Q', 'Kha').replace('q', 'qkh')
+    text = text.replace('R', 'Lhma').replace('r', 'rh')
+    text = text.replace('S', 'Mha').replace('s', 'rafshiphsahinihinib')
+    text = text.replace('T', 'Okt').replace('t', 'iuehbiif')
+    text = text.replace('U', 'Pha').replace('u', 'midje')
+    text = text.replace('Y', 'Qka').replace('v', 'vie')
+    text = text.replace('W', 'Rho').replace('w', 'wie')
+    text = text.replace('X', 'Sl').replace('x', 'xie')
+    text = text.replace('Y', 'To').replace('y', 'yie')
+    text = text.replace('Z', 'Uux').replace('z', 'ziph')
+
+    text = last_replace(text, '!', '! {}'.format(random.choice(endings)))
+    text = last_replace(text, '!', '!')
+    text = last_replace(text, '!', '! {}'.format(random.choice(endings)))
+
+    return text
+
+
+def text_to_test(text):
+    """ Converts your text to a test """
+    endings = ['A']
+
+    text = text.replace('A', 'A').replace('a', 'a')
+
+    text = last_replace(text, '!', '! {}'.format(random.choice(endings)))
+    text = last_replace(text, '?', '?')
+    text = last_replace(text, '.', '. {}'.format(random.choice(endings)))
+
+    return text
+
+@client.command()
+async def cyphertest(ctx, *, text="No text was entered"):
+    await ctx.send(text_to_test(ctx.message.content))
+
+@client.command()
+async def hell(ctx, *, text="No text was entered"):
+    await ctx.send(text_to_hell(ctx.message.content))
+
+@client.command()
+async def owo(ctx, *, text="No text was entered"):
+    await ctx.send(text_to_owo(ctx.message.content))
+
+@client.command()
+async def flj(ctx, *, text="No text was entered"):
+    await ctx.send(text_to_flj(ctx.message.content))
+
+@client.command()
+async def cypher(ctx, *, text="No text was entered"):
+    await ctx.send(text_to_cypher(ctx.message.content))
+
+@client.command()
+async def decypher(ctx, *, text="No text was entered"):
+    await ctx.send(text_to_decypher(ctx.message.content))
