@@ -1,0 +1,230 @@
+import discord
+import random
+import asyncio
+import pyfiglet
+import time
+import sys
+import requests
+import aiohttp
+import json
+import nltk
+import numpy
+import tflearn
+import tensorflow
+#✌︎('ω'✌︎ )
+#(๑╹ω╹๑ )
+from datetime import datetime, timezone
+from discord.ext import commands
+from discord.ext import commands, tasks
+from aiohttp import web
+from pprint import pprint
+from aiohttp import web
+
+
+from nltk.stem.lancaster import LancasterStemmer
+
+stemmer = LancasterStemmer()
+
+client = commands.Bot(command_prefix=[".", "pge", "Hey Paige, ", "Hey Paige ", "Paige, "])
+
+# api_key = ''
+
+# Status engine
+
+print(datetime.now(timezone.utc))
+
+@client.event
+async def on_ready():
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="4Vögel - String Theory 🔭️️️️"))
+    print('Connected to bot: {}'.format(client.user.name))
+    await asyncio.sleep(1)
+    print('Bot ID: {}'.format(client.user.id))
+    await asyncio.sleep(1)
+    print('Assembling brain...')
+    await asyncio.sleep(2)
+    print('Assembling personality...')
+    await asyncio.sleep(2)
+    print('Inspecting neural junctions...')
+    await asyncio.sleep(3)
+    print('Generating consciousness...')
+    await asyncio.sleep(5)
+    print("Good 2 go! This'll be epic")
+
+#with open("intents.json") as file:
+#    data = json.load(file)
+
+client.remove_command('help')
+
+#print(data)
+
+# Error Handler Engine
+
+thisdict = {
+
+    }
+
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandNotFound):
+        if ctx.message.content[1].isalpha():
+            await ctx.send("https://cdn.discordapp.com/attachments/779456986051379213/792880097119961098/image0.png")
+    if isinstance(error, commands.CommandOnCooldown):
+        await ctx.send('This command is on a %.2fs cooldown' % error.retry_after)
+        get = thisdict.get(ctx.author)
+        if get is None:
+            thisdict.update({ctx.author: 0})
+        thisdict[ctx.author] += 1
+        get2 = thisdict.get(ctx.author)
+        if get2 == 1:
+            await ctx.send("Please stop spamming me ;w;")
+    if isinstance(error, commands.MissingPermissions):
+        await ctx.send("I don't have the permissions to do that qwq srry")
+
+#@client.event
+#async def on_command_error(ctx, error):
+#    if isinstance(error, commands.CommandOnCooldown):
+#        await ctx.send('This command is on a %.2fs cooldown' % error.retry_after)
+
+# Conversational Life (Basic)
+
+@client.event
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def on_message(message):
+    if client.user.mention in message.content.split():
+        await asyncio.sleep(5)
+        await message.channel.send('Ping?')
+    await client.process_commands(message)
+    if "¯\_(ツ)_/¯" in message.content:
+        await asyncio.sleep(5)
+        await message.channel.send('I dunno man :P')
+        await client.process_commands(message)
+    if "Hey Paige what's your favourite colour?" in message.content:
+        await asyncio.sleep(5)
+        await message.channel.send('Blue or pink :P')
+        await client.process_commands(message)
+    if "Noice owo" in message.content:
+        await asyncio.sleep(5)
+        await message.channel.send('Yeee ^w^')
+        await client.process_commands(message)
+    if "Paige, how do you feel about" in message.content:
+        await asyncio.sleep(5)
+        await message.channel.send("I don't really care tbh")
+        await client.process_commands(message)
+    if "div 0 0" in message.content:
+        await asyncio.sleep(1)                           
+        await message.channel.send('0 / 0 = joe mama')
+        await client.process_commands(message)
+    if "Hot choccy" in message.content:
+        await asyncio.sleep(2)
+        await message.channel.send(':0 can I have some qwq?')
+        await client.process_commands(message)
+    if "hot choccy" in message.content:
+        await asyncio.sleep(2)
+        await message.channel.send(':0 can I have some qwq?')
+        await client.process_commands(message)
+    if "Happy new year" in message.content:
+        await asyncio.sleep(1)
+        await message.channel.send('AAaAaAaAaAaAaaAaaaAaaAaa HAPPY NEW YEARRRR >w<')
+        await client.process_commands(message)
+    if "happy new year" in message.content:
+        await asyncio.sleep(1)
+        await message.channel.send('AAaAaAaAaAaAaaAaaaAaaAaa HAPPY NEW YEARRRR >w<')
+        await client.process_commands(message)
+    if "Yush" in message.content:
+        await asyncio.sleep(2)
+        await message.channel.send('uwu')
+        await client.process_commands(message)
+    if "Thx Paige" in message.content:
+        await message.channel.send('Anytime :D')
+        await client.process_commands(message)
+    if "Thanks Paige" in message.content:
+        await message.channel.send('No problem :3')
+        await client.process_commands(message)
+    if "thanks Paige" in message.content:
+        await message.channel.send('No problem :3')
+        await client.process_commands(message)
+    if "Pog" in message.content:
+        await asyncio.sleep(5)
+        await message.channel.send('Pawg')
+        await client.process_commands(message)
+    if "You're an idiot" in message.content:
+        await message.channel.send('>:O')
+        await client.process_commands(message)
+    if "you're an idiot" in message.content:
+        await message.channel.send('>:O')
+        await client.process_commands(message)
+    if "Youre an idiot" in message.content:
+        await message.channel.send('>:O')
+        await client.process_commands(message)
+    if "youre an idiot" in message.content:
+        await message.channel.send('>:O')
+        await client.process_commands(message)
+    if "You are an idiot" in message.content:
+        await message.channel.send('>:O')
+        await client.process_commands(message)
+    if "you are an idiot" in message.content:
+        await message.channel.send('>:O')
+        await client.process_commands(message)
+    if "dab " in message.content:
+            await message.add_reaction('🇨')
+            await message.add_reaction('🇷')
+            await message.add_reaction('🇮')
+            await message.add_reaction('🇳')
+            await message.add_reaction('🇬')
+            await message.add_reaction('🇪')
+            await client.process_commands(message)
+    if "Dab " in message.content:
+        await message.add_reaction('🇨')
+        await message.add_reaction('🇷')
+        await message.add_reaction('🇮')
+        await message.add_reaction('🇳')
+        await message.add_reaction('🇬')
+        await message.add_reaction('🇪')
+        await client.process_commands(message)
+    if "Tea" in message.content:
+        await message.add_reaction('<:tea:790659808729890837>')
+        await client.process_commands(message)
+    if "mitten" in message.content:
+        await message.add_reaction('<:mitten:790662070705061898>')
+        await client.process_commands(message)
+    if "Mitten" in message.content:
+        await message.add_reaction('<:mitten:790662070705061898>')
+        await client.process_commands(message)
+    if "toaster" in message.content:
+        await message.add_reaction('<:toaster:790659071886753822>')
+        await client.process_commands(message)
+    if "Toaster" in message.content:
+        await message.add_reaction('<:toaster:790659071886753822>')
+        await client.process_commands(message)
+    if "on fire" in message.content:
+        await message.add_reaction('🔥')
+        await client.process_commands(message)
+    if "On fire" in message.content:
+        await message.add_reaction('🔥')
+        await client.process_commands(message)
+    if "fire" in message.content:
+        await message.add_reaction('🔥')
+        await client.process_commands(message)
+    if "Fire" in message.content:
+        await message.add_reaction('🔥')
+        await client.process_commands(message)
+    if "has been kicked by" in message.content:
+        await message.add_reaction('🥾')
+        await client.process_commands(message)
+    if "yiff" in message.content:
+        await message.add_reaction('<:paigeowo:791029155973562368>')
+        await client.process_commands(message)
+    if "Yiff" in message.content:
+        await message.add_reaction('<:paigeowo:791029155973562368>')
+        await client.process_commands(message)
+    if "gooeyexperiments" in message.content:
+        await message.add_reaction('<:gooeyexperiments:795749148590211083>')
+        await client.process_commands(message)
+    if "MERR CHRIMISS" in message.content:
+        await message.add_reaction('❄️')
+        await message.add_reaction('🎄')
+        await client.process_commands(message)
+    if "Press ✅ to accept and ❌ to decline." in message.content:
+        await message.add_reaction('✅')
+        await message.add_reaction('❌')
+        await client.process_commands(message)
