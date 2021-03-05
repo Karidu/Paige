@@ -1,0 +1,30 @@
+@client.command()
+async def typetestt(ctx):
+    async with ctx.typing():
+        type_time = random.uniform(0.5, 2)
+        await asyncio.sleep(type_time)
+    await ctx.send('Done typing for about {} seconds'.format(round(type_time, 2)))
+
+
+@client.command(aliases=["dm", "Dm"])
+async def DM(ctx, member: discord.Member, *, msg):
+    em = discord.Embed(title = "Message from: " + ctx.author.name, description = str(msg), color=0xFF8CAD)
+    await ctx.send('Successful.')
+    await member.send(embed=em)
+
+@client.command()
+async def msg(ctx, member: discord.Member, *, text):
+    try:
+        await member.send(text)
+    except:
+        await ctx.send(f"DMs off..")
+
+# Invite Engine
+
+@client.command()
+async def invites(ctx):
+    totalInvites = 0
+    for i in await ctx.guild.invites():
+        if i.inviter == ctx.author:
+            totalInvites += i.uses
+    await ctx.send(f"You've invited {totalInvites} member{'' if totalInvites == 1 else 's'} to this server! :D ")
